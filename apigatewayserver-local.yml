@@ -12,6 +12,8 @@ spring:
           uri: lb://CONFIG-SERVICE
           predicates:
             - Path=/config-service/**
+          filters:
+            - RewritePath=/config-service, /
   rabbitmq:
    host: localhost
    port: 5672
