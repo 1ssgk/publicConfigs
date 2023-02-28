@@ -8,12 +8,12 @@ spring:
             - Path=/auth-service/**
           filters:
             - RewritePath=/auth-service, /
-        - id: config-service
-          uri: lb://CONFIG-SERVICE
+        - id: config-server
+          uri: lb://CONFIG-SERVER
           predicates:
-            - Path=/config-service/**
+            - Path=/config-server/**
           filters:
-            - RewritePath=/config-service, /
+            - RewritePath=/config-server, /
   rabbitmq:
    host: localhost
    port: 5672
