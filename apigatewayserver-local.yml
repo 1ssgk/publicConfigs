@@ -6,6 +6,7 @@ spring:
           uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth-service/**
+          filters:
             - RewritePath=/auth-service, /
         - id: config-service
           uri: lb://CONFIG-SERVICE
