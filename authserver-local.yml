@@ -9,6 +9,7 @@ jwt:
   token-validity-in-seconds: 3600
   authorities-key: auth
 
+test: 111
 
 spring:
   main:
