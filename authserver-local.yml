@@ -15,9 +15,9 @@ spring:
   main:
     allow-bean-definition-overriding: true
     profiles:
-      active: dev
+      active: local
   application:
-    name: auth-server
+    name: authserver
   h2:
     console:
       enabled: true
@@ -75,8 +75,3 @@ eureka:
       defaultZone: http://localhost:8580/eureka/
 
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, beans, refresh
