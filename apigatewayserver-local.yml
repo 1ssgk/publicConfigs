@@ -3,11 +3,11 @@ spring:
     gateway:
       routes:
         - id: auth-service
-          uri: lb://AUTH-SERVICE
+          uri: lb://AUTHSERVER
           predicates:
-            - Path=/auth-service/**
+            - Path=/authserver/**
           filters:
-            - RewritePath=/auth-service, /
+            - RewritePath=/authserver, /
         - id: config-server
           uri: lb://CONFIG-SERVER
           predicates:
