@@ -9,7 +9,7 @@ jwt:
   token-validity-in-seconds: 3600
   authorities-key: auth
 
-test:
+wonseok:
   val: 111
 
 spring:
