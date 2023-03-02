@@ -15,10 +15,10 @@ wonseok:
 spring:
   main:
     allow-bean-definition-overriding: true
-    profiles:
-      active: local
   application:
     name: authserver
+  profiles: 
+    active: local
   h2:
     console:
       enabled: true
