@@ -14,13 +14,13 @@ spring:
             - Path=/config-server/**
           filters:
             - RewritePath=/config-server, /
-  rabbitmq:
-   host: localhost
-   port: 5672
-   stream:
-     name: apigateway
-     username: guest
-     password: guest
+#  rabbitmq:
+#   host: localhost
+#   port: 5672
+#   stream:
+#     name: apigateway
+#     username: guest
+#     password: guest
 
 management:
   endpoints:
