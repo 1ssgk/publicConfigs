@@ -10,7 +10,7 @@ jwt:
   authorities-key: auth
 
 wonseok:
-  val: 111
+  val: 222
 
 spring:
   main:
