@@ -17,8 +17,6 @@ spring:
     allow-bean-definition-overriding: true
   application:
     name: authserver
-  profiles: 
-    active: local
   h2:
     console:
       enabled: true
