@@ -1,3 +1,10 @@
+server:
+  ssl:
+    key-store: ws-keystore.p12
+    key-store-type: PKCS12
+    key-store-password: dnjstjr123
+    key-alias: ws-keystore
+
 spring:
   cloud:
     gateway:
@@ -19,7 +26,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: busrefresh
+        include: busrefresh, refresh
   endpoint:
     gateway:
       enabled: true
