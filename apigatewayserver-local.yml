@@ -2,25 +2,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: auth-service
-          uri: lb://AUTHSERVER
+        - id: auth
+          uri: lb://AUTH-SERVER
           predicates:
-            - Path=/authserver/**
+            - Path=/auth/**
           filters:
-            - RewritePath=/authserver, /
-        - id: config-server
+            - RewritePath=/auth, /
+        - id: config
           uri: lb://CONFIG-SERVER
           predicates:
-            - Path=/config-server/**
+            - Path=/config/**
           filters:
-            - RewritePath=/config-server, /
-#  rabbitmq:
-#   host: localhost
-#   port: 5672
-#   stream:
-#     name: apigateway
-#     username: guest
-#     password: guest
+            - RewritePath=/config, /
 
 management:
   endpoints:
