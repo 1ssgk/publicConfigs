@@ -9,18 +9,18 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: auth
-          uri: lb://AUTH
+        - id: auth-service
+          uri: lb://AUTH-SERVICE
           predicates:
-            - Path=/auth/**
+            - Path=/auth-service/**
           filters:
-            - RewritePath=/auth, /
-        - id: config
-          uri: lb://CONFIG
+            - RewritePath=/auth-service/(?<segment>.*),/$\{segment}
+        - id: config-service
+          uri: lb://CONFIG-SERVICE
           predicates:
-            - Path=/config/**
+            - Path=/config-service/**
           filters:
-            - RewritePath=/config, /
+            - RewritePath=/config-service/(?<segment>.*),/$\{segment}
 
 management:
   endpoints:
