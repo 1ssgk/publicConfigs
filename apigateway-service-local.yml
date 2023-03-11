@@ -15,7 +15,7 @@ spring:
             - Path=/user-service/**
           filters:
             - RewritePath=/user-service/(?<path>.*),/$\{path}
-	- id: user-service
+        - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/oauth2/**
