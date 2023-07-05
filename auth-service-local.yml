@@ -42,7 +42,7 @@ spring:
   jpa:
     defer-datasource-initialization: true
     hibernate:
-      ddl-auto: create-drop # create,create-drop,update,none
+      ddl-auto: update # create,create-drop,update,none
     properties:
       hibernate:
         format_sql: true
