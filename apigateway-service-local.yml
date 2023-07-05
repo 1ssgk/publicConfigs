@@ -27,6 +27,12 @@ spring:
             - Path=/auth-service/**
           filters:
             - RewritePath=/auth-service/(?<segment>.*),/$\{segment}
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order-service/**
+          filters:
+            - RewritePath=/order-service/(?<segment>.*),/$\{segment}
 
 management:
   endpoints:
