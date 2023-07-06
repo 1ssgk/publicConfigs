@@ -36,7 +36,7 @@ spring:
       mode: always
 #      schema-locations:
 #        - classpath:schema-h2.sql
-      data-locations:
+#      data-locations:
 #        - classpath:data-h2.sql
 
   jpa:
