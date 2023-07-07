@@ -5,6 +5,11 @@
 #    key-store-password: dnjstjr123
 #    key-alias: ws-keystore
 
+token:
+  #HS512 알고리즘을 사용할 것이기 때문에 512bit, 즉 64byte 이상의 secret key를 사용해야 한다.
+  #echo 'subject-project-jwt-secret-hi-i-am-wonseok-hs512-algorithm-base64-encoding-abcdefg-hijklmn-opqr'|base64
+  secret: c3ViamVjdC1wcm9qZWN0LWp3dC1zZWNyZXQtaGktaS1hbS13b25zZW9rLWhzNTEyLWFsZ29yaXRobS1iYXNlNjQtZW5jb2RpbmctYWJjZGVmZy1oaWprbG1uLW9wcXI=
+
 spring:
   cloud:
     gateway:
@@ -33,6 +38,13 @@ spring:
             - Path=/order-service/**
           filters:
             - RewritePath=/order-service/(?<segment>.*),/$\{segment}
+        - id: order-service
+          uri: lb://ORDER-SERVICE
+          predicates:
+            - Path=/order-service/test
+          filters:
+            - RewritePath=/order-service/(?<segment>.*),/$\{segment}
+            - AuthorizationHeaderFilter
 
 management:
   endpoints:
