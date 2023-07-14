@@ -39,6 +39,12 @@ spring:
           filters:
             - RewritePath=/order-service/(?<segment>.*),/$\{segment}
             - AuthorizationHeaderFilter
+        - id: openapi
+          uri: http://localhost:${server.port}
+          predicates:
+            - Path=/v3/api-docs/**
+          filters:
+            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
 
 springdoc:
   swagger-ui:
